@@ -54,19 +54,30 @@
 
 package leetcode.editor.cn;
 //Java：最大子序和
-public class MaximumSubarray{
- public static void main(String[] args) {
-  Solution solution = new MaximumSubarray().new Solution();
-  // TO TEST
- }
- 
- //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int maxSubArray(int[] nums) {
-        
-        return 0;
+public class MaximumSubarray {
+    public static void main(String[] args) {
+        Solution solution = new MaximumSubarray().new Solution();
+        // TO TEST
+        int i = solution.maxSubArray(new int[]{-1, -1000, 999, 2, -1000, 999, 2, -10});
+        System.out.println(i);
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int maxSubArray(int[] nums) {
+            int pre = 0; //前缀和；
+            int minPre = 0; //最小的前缀和：哨兵；
+            int maxSum = Integer.MIN_VALUE;
+            for (int i = 0; i < nums.length; i++) {
+                System.out.printf(pre + "  " + minPre + " " + (pre - minPre) + "   " + maxSum);
+                System.out.println();
+                pre += nums[i];
+                maxSum = Math.max(maxSum, pre - minPre);
+                minPre = Math.min(pre, minPre);
+            }
+            return maxSum;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
