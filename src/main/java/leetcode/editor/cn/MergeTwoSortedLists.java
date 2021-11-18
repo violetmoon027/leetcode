@@ -48,8 +48,7 @@ public class MergeTwoSortedLists {
         // 1==1 l1->l4->l5->l6 return l2->l3
         ListNode listNode = solution.mergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4))),
                 new ListNode(2, new ListNode(3, new ListNode(4))));
-        System.out.println("Over");
-
+        System.out.println(ListNode.parseListNode(listNode));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
