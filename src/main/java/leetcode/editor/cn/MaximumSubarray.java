@@ -69,8 +69,6 @@ public class MaximumSubarray {
             int minPre = 0; //最小的前缀和：哨兵；
             int maxSum = Integer.MIN_VALUE;
             for (int i = 0; i < nums.length; i++) {
-                System.out.printf(pre + "  " + minPre + " " + (pre - minPre) + "   " + maxSum);
-                System.out.println();
                 pre += nums[i];
                 maxSum = Math.max(maxSum, pre - minPre);
                 minPre = Math.min(pre, minPre);
